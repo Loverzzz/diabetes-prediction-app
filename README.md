@@ -10,9 +10,9 @@ Dataset ini disimpan dalam format CSV dan terdapat dalam folder `data/diabetes_p
 
 ## 2. Persoalan yang Ingin Diselesaikan
 
-**Masalah **: Diabetes adalah salah satu penyakit kronis yang paling umum di dunia, dengan dampak yang signifikan terhadap kesehatan masyarakat dan sistem kesehatan global. Menurut laporan dari Organisasi Kesehatan Dunia (WHO), lebih dari 422 juta orang di seluruh dunia menderita diabetes, dan angka ini terus meningkat setiap tahunnya. Diabetes juga menjadi penyebab kematian langsung bagi sekitar 1,5 juta orang setiap tahun. Penyakit ini sering kali berkembang tanpa gejala yang jelas pada tahap awal, sehingga banyak penderita baru menyadari kondisinya setelah komplikasi serius terjadi, seperti penyakit jantung, gagal ginjal, atau kebutaan.
+# **Masalah:** Diabetes adalah salah satu penyakit kronis yang paling umum di dunia, dengan dampak yang signifikan terhadap kesehatan masyarakat dan sistem kesehatan global. Menurut laporan dari Organisasi Kesehatan Dunia (WHO), lebih dari 422 juta orang di seluruh dunia menderita diabetes, dan angka ini terus meningkat setiap tahunnya. Diabetes juga menjadi penyebab kematian langsung bagi sekitar 1,5 juta orang setiap tahun. Penyakit ini sering kali berkembang tanpa gejala yang jelas pada tahap awal, sehingga banyak penderita baru menyadari kondisinya setelah komplikasi serius terjadi, seperti penyakit jantung, gagal ginjal, atau kebutaan.
 
-**Urgensi **: Deteksi dini diabetes sangat penting untuk mencegah komplikasi yang lebih serius. Dengan mengetahui kemungkinan seseorang menderita diabetes lebih awal, langkah-langkah preventif seperti perubahan gaya hidup, pengaturan diet, dan intervensi medis dapat dilakukan untuk memperlambat atau bahkan mencegah perkembangan penyakit. Selain itu, deteksi dini juga dapat membantu mengurangi beban ekonomi pada sistem kesehatan, terutama di negara-negara dengan prevalensi diabetes yang tinggi.
+# **Urgensi **: Deteksi dini diabetes sangat penting untuk mencegah komplikasi yang lebih serius. Dengan mengetahui kemungkinan seseorang menderita diabetes lebih awal, langkah-langkah preventif seperti perubahan gaya hidup, pengaturan diet, dan intervensi medis dapat dilakukan untuk memperlambat atau bahkan mencegah perkembangan penyakit. Selain itu, deteksi dini juga dapat membantu mengurangi beban ekonomi pada sistem kesehatan, terutama di negara-negara dengan prevalensi diabetes yang tinggi.
 
 Namun, deteksi dini diabetes sering kali menghadapi tantangan, seperti:
 
@@ -20,9 +20,9 @@ Namun, deteksi dini diabetes sering kali menghadapi tantangan, seperti:
  2. Ketergantungan pada pemeriksaan medis yang memerlukan biaya tinggi.
  3. Keterbatasan tenaga medis untuk menangani jumlah pasien yang terus meningkat.
 
-**Solusi yang ditawarkan:** Persoalan yang ingin diselesaikan adalah **prediksi kemungkinan seseorang mengidap diabetes**. Dengan menggunakan data medis yang tersedia, tujuan utama dari model ini adalah untuk memberikan prediksi yang akurat, yang dapat membantu dalam deteksi dini penyakit diabetes, sehingga tindakan pencegahan atau pengobatan dapat segera dilakukan.
+# **Solusi yang ditawarkan:** Persoalan yang ingin diselesaikan adalah **prediksi kemungkinan seseorang mengidap diabetes**. Dengan menggunakan data medis yang tersedia, tujuan utama dari model ini adalah untuk memberikan prediksi yang akurat, yang dapat membantu dalam deteksi dini penyakit diabetes, sehingga tindakan pencegahan atau pengobatan dapat segera dilakukan.
 
-**Manfaat:** 
+# **Manfaat:** 
   1. Efisien: Prediksi dapat dilakukan dengan cepat tanpa memerlukan pemeriksaan medis yang rumit.
   2. Terjangkau: Menggunakan data yang sudah tersedia, seperti hasil pemeriksaan rutin, untuk membuat prediksi.
   3. Mudah Diakses: Model ini dapat diintegrasikan ke dalam aplikasi berbasis web, sehingga dapat digunakan oleh siapa saja, kapan saja, dan di mana saja.
