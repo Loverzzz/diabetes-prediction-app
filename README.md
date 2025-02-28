@@ -10,7 +10,22 @@ Dataset ini disimpan dalam format CSV dan terdapat dalam folder `data/diabetes_p
 
 ## 2. Persoalan yang Ingin Diselesaikan
 
-Persoalan yang ingin diselesaikan adalah **prediksi kemungkinan seseorang mengidap diabetes**. Dengan menggunakan data medis yang tersedia, tujuan utama dari model ini adalah untuk memberikan prediksi yang akurat, yang dapat membantu dalam deteksi dini penyakit diabetes, sehingga tindakan pencegahan atau pengobatan dapat segera dilakukan.
+**Masalah **: Diabetes adalah salah satu penyakit kronis yang paling umum di dunia, dengan dampak yang signifikan terhadap kesehatan masyarakat dan sistem kesehatan global. Menurut laporan dari Organisasi Kesehatan Dunia (WHO), lebih dari 422 juta orang di seluruh dunia menderita diabetes, dan angka ini terus meningkat setiap tahunnya. Diabetes juga menjadi penyebab kematian langsung bagi sekitar 1,5 juta orang setiap tahun. Penyakit ini sering kali berkembang tanpa gejala yang jelas pada tahap awal, sehingga banyak penderita baru menyadari kondisinya setelah komplikasi serius terjadi, seperti penyakit jantung, gagal ginjal, atau kebutaan.
+
+**Urgensi **: Deteksi dini diabetes sangat penting untuk mencegah komplikasi yang lebih serius. Dengan mengetahui kemungkinan seseorang menderita diabetes lebih awal, langkah-langkah preventif seperti perubahan gaya hidup, pengaturan diet, dan intervensi medis dapat dilakukan untuk memperlambat atau bahkan mencegah perkembangan penyakit. Selain itu, deteksi dini juga dapat membantu mengurangi beban ekonomi pada sistem kesehatan, terutama di negara-negara dengan prevalensi diabetes yang tinggi.
+
+Namun, deteksi dini diabetes sering kali menghadapi tantangan, seperti:
+
+ 1. Kurangnya akses ke fasilitas kesehatan di daerah terpencil.
+ 2. Ketergantungan pada pemeriksaan medis yang memerlukan biaya tinggi.
+ 3. Keterbatasan tenaga medis untuk menangani jumlah pasien yang terus meningkat.
+
+**Solusi yang ditawarkan:** Persoalan yang ingin diselesaikan adalah **prediksi kemungkinan seseorang mengidap diabetes**. Dengan menggunakan data medis yang tersedia, tujuan utama dari model ini adalah untuk memberikan prediksi yang akurat, yang dapat membantu dalam deteksi dini penyakit diabetes, sehingga tindakan pencegahan atau pengobatan dapat segera dilakukan.
+
+**Manfaat:** 
+  1. Efisien: Prediksi dapat dilakukan dengan cepat tanpa memerlukan pemeriksaan medis yang rumit.
+  2. Terjangkau: Menggunakan data yang sudah tersedia, seperti hasil pemeriksaan rutin, untuk membuat prediksi.
+  3. Mudah Diakses: Model ini dapat diintegrasikan ke dalam aplikasi berbasis web, sehingga dapat digunakan oleh siapa saja, kapan saja, dan di mana saja.
 
 ## 3. Solusi Machine Learning
 
@@ -30,6 +45,51 @@ Data yang digunakan akan diproses menggunakan beberapa tahapan:
 
 ### Arsitektur Model:
 Model yang digunakan dalam proyek ini adalah model **Klasifikasi** berbasis **Neural Network**. Model ini dibangun menggunakan TensorFlow dan dilatih untuk memprediksi apakah seseorang menderita diabetes atau tidak.
+
+1. Input Layer
+    Model menerima dua jenis input:
+    - Fitur Kategorikal: Fitur ini diolah menggunakan representasi one-hot encoding dengan dimensi spesifik untuk setiap fitur. Input layer untuk fitur kategorikal dirancang menggunakan tf.keras.Input dengan dimensi (dim + 1), di mana dim adalah jumlah kategori unik dalam fitur tersebut.
+    - Fitur Numerikal: Fitur ini diolah secara langsung sebagai input numerik dengan dimensi (1).
+    Semua input ini kemudian digabungkan menggunakan layer Concatenate.
+2. Hidden Layers
+  Model memiliki tiga hidden layer Dense (fully connected layer) dengan konfigurasi sebagai berikut:
+
+    - Layer 1:
+      - Jumlah neuron: 256
+      - Fungsi aktivasi: ReLU (Rectified Linear Unit)
+      - Fungsi ini dipilih karena dapat menangani non-linearitas dengan baik dan mencegah saturasi gradien.
+    - Layer 2:
+      - Jumlah neuron: 64
+      - Fungsi aktivasi: ReLU
+    - Layer 3:
+      - Jumlah neuron: 16
+      - Fungsi aktivasi: ReLU
+    Hidden layers ini dirancang untuk menangkap pola-pola kompleks dalam data, dengan jumlah neuron yang semakin berkurang untuk melakukan kompresi informasi.
+ 3. Output Layer
+    - Jumlah neuron: 1
+    - Fungsi aktivasi: Sigmoid
+    - Fungsi ini dipilih karena model dirancang untuk klasifikasi biner, di mana output berupa probabilitas antara 0 dan 1.
+  4. Optimizer
+    - Model menggunakan Adam Optimizer dengan learning rate sebesar 0.001.
+      Adam dipilih karena:
+        - Menggabungkan keunggulan dari RMSProp dan Momentum.
+        - Stabil dan cepat dalam proses konvergensi.
+  5. Loss Function
+    - Binary Crossentropy: Fungsi loss ini digunakan untuk klasifikasi biner, menghitung jarak antara prediksi probabilitas dan label sebenarnya.
+  6. Metrics
+    - Model dievaluasi menggunakan metrik:
+      - BinaryAccuracy: Mengukur proporsi prediksi yang benar terhadap total prediksi.
+  7. Training Configuration
+      - Batch Size: 64
+      - Epochs: 10
+      - Callbacks: TensorBoard untuk memantau proses pelatihan model, seperti loss dan akurasi, secara visual.
+  8. Training Process
+     - Data Input: Data dimuat dari file TFRecord dengan format yang telah ditransformasi menggunakan TensorFlow Transform (TFT).
+     - Training dan Validation: Dataset dibagi menjadi data latih dan validasi, masing-masing dengan batch size 64.
+     - Steps per Epoch: Ditentukan oleh argumen fn_args.train_steps dan fn_args.eval_steps.
+  9. Deployment
+     - Model disimpan dalam format SavedModel dengan signature untuk serving, memungkinkan model digunakan dalam produksi melalui API. Fungsi serve_tf_examples_fn digunakan untuk parsing input selama serving.
+
 
 ### Metrik Evaluasi:
 Beberapa metrik evaluasi yang digunakan untuk menilai performa model adalah:
