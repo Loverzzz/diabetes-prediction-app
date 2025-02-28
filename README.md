@@ -63,7 +63,9 @@ Penggunaan **Prometheus** dan **Grafana** memungkinkan pemantauan performa model
 
 Gambar berikut menunjukkan grafik monitoring untuk jumlah permintaan prediksi:
 
-![Grafik Monitoring](outputs/monitoring_1.png)
+![Grafik Monitoring]!
+[monitoring 1](https://github.com/user-attachments/assets/31181408-16dd-4e55-810b-b421beb4a080)
+![monitoring 2](https://github.com/user-attachments/assets/f81ea2a1-0599-4938-84ea-c6670255661e)
 
 ## Kesimpulan
 
