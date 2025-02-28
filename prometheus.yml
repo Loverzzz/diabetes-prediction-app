@@ -1,0 +1,9 @@
+# prometheus.yml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'diabetes-prediction-api'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['diabetes-api:8080']
