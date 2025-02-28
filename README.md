@@ -113,7 +113,7 @@ Model yang telah dilatih akan di-deploy untuk digunakan dalam aplikasi berbasis 
 ## 7. Tautan Web App untuk Mengakses Model Serving
 
 Model yang telah di-deploy dapat diakses melalui web app dengan tautan berikut:  
-[**Diabetes Prediction Web App**]([http://diabetes-prediction-app.railway.app](https://diabetes-prediction-diabetes-prediction.up.railway.app/))
+[**Diabetes Prediction Web App**] : https://diabetes-prediction-diabetes-prediction.up.railway.app/
 
 Tautan ini memungkinkan pengguna untuk mengunggah data baru dan menerima prediksi tentang kemungkinan mengidap diabetes.
 
