@@ -33,15 +33,15 @@ Model yang digunakan dalam proyek ini adalah model **Klasifikasi** berbasis **Ne
 
 ### Metrik Evaluasi:
 Beberapa metrik evaluasi yang digunakan untuk menilai performa model adalah:
+- **Accuracy**: Proporsi prediksi yang benar dari total prediksi.
 - **AUC (Area Under Curve)**: Mengukur seberapa baik model memisahkan dua kelas.
 - **Precision**: Mengukur seberapa tepat prediksi positif yang dihasilkan model.
 - **Recall**: Mengukur seberapa banyak data positif yang dapat terdeteksi oleh model.
 - **F1-Score**: Harmonik rata-rata antara precision dan recall.
-- **Accuracy**: Proporsi prediksi yang benar dari total prediksi.
 
 ## 5. Performa Model
 
-Model yang dihasilkan dari pipeline ini dievaluasi dengan menggunakan **Evaluator** dan berbagai metrik, di antaranya AUC dan F1-Score. Berdasarkan hasil evaluasi, model ini menunjukkan performa yang baik dengan AUC tinggi dan nilai F1-Score yang memadai, menunjukkan keseimbangan antara precision dan recall.
+Model yang dihasilkan dari pipeline ini dievaluasi dengan menggunakan **Evaluator** dan berbagai metrik, di antaranya Accuracy sebesar 0.97 dan F1-Score sebesar 0.7934482025101043. Berdasarkan hasil evaluasi, model ini menunjukkan performa yang baik dengan Accuracy tinggi dan nilai F1-Score yang memadai, menunjukkan keseimbangan antara precision dan recall.
 
 ## 6. Model Deployment
 
